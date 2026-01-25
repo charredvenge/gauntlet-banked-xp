@@ -60,7 +60,9 @@ public class GauntletBankedXpPlugin extends Plugin
 //		log.debug("LOOT RECVD FROM {}", event.getName());
 		if (event.getName().equals(CG_LOOT) || event.getName().equals(G_LOOT)) {
 			double xp = GauntletBankedXpCalculate.calculateLoot(event.getItems(), config);
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Crafting XP: " + xp, null);
+			if (xp != 0.0) {
+				client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Crafting XP: " + xp, null);
+			}
 		}
 	}
 
