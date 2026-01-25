@@ -11,6 +11,10 @@ import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.loottracker.LootReceived;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 @Slf4j
 @PluginDescriptor(
@@ -18,6 +22,12 @@ import net.runelite.client.plugins.PluginDescriptor;
 )
 public class GauntletBankedXpPlugin extends Plugin
 {
+	private static final Logger log = LoggerFactory.getLogger(GauntletBankedXpPlugin.class);
+
+	private final String CG_LOOT = "Corrupted Hunllef";
+	private final String G_LOOT = "Crystalline Hunllef";
+
+
 	@Inject
 	private Client client;
 
@@ -43,6 +53,15 @@ public class GauntletBankedXpPlugin extends Plugin
 //		{
 //			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.greeting(), null);
 //		}
+	}
+
+	@Subscribe
+	public void onLootReceived(LootReceived event) {
+		log.debug("LOOT RECVD FROM {}", event.getName());
+		if (event.getName().equals(CG_LOOT) || event.getName().equals(G_LOOT)) {
+			double xp = GauntletBankedXpCalculate.calculateLoot(event.getItems());
+			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Crafting XP: " + xp, null);
+		}
 	}
 
 	@Provides
