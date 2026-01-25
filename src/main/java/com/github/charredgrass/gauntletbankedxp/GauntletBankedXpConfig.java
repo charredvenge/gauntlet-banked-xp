@@ -8,15 +8,7 @@ import net.runelite.client.config.ConfigItem;
 @ConfigGroup("gauntletbankedxp")
 public interface GauntletBankedXpConfig extends Config
 {
-//	@ConfigItem(
-//		keyName = "greeting",
-//		name = "Welcome Greeting",
-//		description = "The message to show to the user when they login"
-//	)
-//	default String greeting()
-//	{
-//		return "Hello";
-//	}
+
 	@ConfigItem(
 		name = "Battlestaves",
 		description = "The orbs to attach to battlestaves.",
