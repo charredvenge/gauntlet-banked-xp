@@ -1,6 +1,6 @@
-package com.github.charredgrass.gauntletbankedxp;
+package com.github.charredvenge.gauntletbankedxp;
 
-import com.github.charredgrass.gauntletbankedxp.config.BattlestavesMethod;
+import com.github.charredvenge.gauntletbankedxp.config.BattlestavesMethod;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;

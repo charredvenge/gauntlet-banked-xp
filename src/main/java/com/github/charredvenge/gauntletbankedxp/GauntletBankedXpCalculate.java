@@ -1,4 +1,4 @@
-package com.github.charredgrass.gauntletbankedxp;
+package com.github.charredvenge.gauntletbankedxp;
 
 import net.runelite.api.gameval.ItemID;
 import net.runelite.client.game.ItemStack;
