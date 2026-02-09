@@ -14,7 +14,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
-def pluginMainClass = 'com.github.charredgrass.gauntletbankedxp.GauntletBankedXpTest'
+def pluginMainClass = 'com.github.charredvenge.gauntletbankedxp.GauntletBankedXpTest'
 
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
