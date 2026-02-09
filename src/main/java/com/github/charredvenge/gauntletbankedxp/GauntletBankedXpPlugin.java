@@ -26,6 +26,8 @@ public class GauntletBankedXpPlugin extends Plugin
 	private final String CG_LOOT = "Corrupted Hunllef";
 	private final String G_LOOT = "Crystalline Hunllef";
 
+	private static double sessionXp = 0.0;
+
 
 	@Inject
 	private Client client;
@@ -61,6 +63,8 @@ public class GauntletBankedXpPlugin extends Plugin
 			double xp = GauntletBankedXpCalculate.calculateLoot(event.getItems(), config);
 			if (xp != 0.0) {
 				client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Crafting XP: " + xp, null);
+				sessionXp += xp;
+				client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Total XP this session: " + sessionXp, null);
 			}
 		}
 	}
